@@ -1,0 +1,105 @@
+<div class="modal-dialog" style="width:880px;">
+	<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal"
+				aria-hidden="true">&times;</button>
+			<h4 class="modal-title">流程信息</h4>
+		</div>
+		<div class="modal-body" style="padding:10">
+			   <div id="saveDiv"　class="panel panel-primary">
+                     <div class="panel-heading"  style="text-align:center;font-size:18px;">岗位异动审批单</div>
+                     <div class="panel-body">
+                        <div class="oneRowDiv" style="height:100px;">
+									<div class="form-group formDiv">
+										<label class="formLabel">表单编号:</label>
+										<span id="formId" name="formId" class="formSpan transform"></span>
+									</div>
+									<div class="form-group formDiv">
+										<label class="formLabel">申请人:</label>
+										<span id="applyStaff" name="applyStaff" class="formSpan transform"></span>
+									</div>
+									<div class="form-group formDiv">
+										<label class="formLabel">所属部门:</label>
+										<span id="deptName" name="deptName" class="formSpan transform"></span>
+									</div>
+							　</div>
+							　<div class="oneRowDiv" style="height:100px;">
+									<div class="form-group formDiv">
+										<label class="formLabel">申请日期:</label>
+										<span id="applyDate" name="applyDate" class="formSpan transform"></span>
+									</div>
+									<div class="form-group formDiv">
+										<label class="formLabel">工号:</label>
+										<span id="staffNo" name="staffNo" class="formSpan transform"></span>
+									</div>
+							　</div>
+							<div class="twoRowDiv" style="height:40px;">
+                   				<button type="button" class="btn btn-primary btn-sm" style="float:right;" onclick="showSelectModal();">添加记录</button>
+						　	</div>
+						 	 <div class="twoRowDiv" style="height:150px;">
+	                          	<div class="form-group formDiv" style="height:100%;">
+										<label class="labelForInput">岗位变动明细:</label>
+										<div id="postChangeInfo" style="border: 1px solid black;float: left;width: 87%;height:100%;overflow-y:auto;">
+												<label style="float:left;width:10%;text-align: center;">姓名</label>
+												<label style="float:left;width:10%;text-align: center;">工号</label>
+												<label style="float:left;width:15%;text-align: center;">异动前部门</label>
+												<label style="float:left;width:20%;text-align: center;">异动前岗位</label>
+												<label style="float:left;width:15%;text-align: center;">异动后部门</label>
+												<label style="float:left;width:20%;text-align: center;">异动后岗位</label>
+												<label style="float:left;width:10%;text-align: center;">操作</label>
+										</div>
+								</div>
+							　</div>
+							 <div class="twoRowDiv" style="height:40px;">
+									<div class="form-group formDiv">
+										<label class="labelForInput">备注:</label>
+										<textarea id="reason" name ="reason" style="width:685px;max-width:685px;max-height:50px;" class="form-control　formSpan need transform"></textarea>
+									</div>
+							　</div>
+							
+							　<div class="twoRowDiv" style="height:auto;margin-top:30px;">
+									<div class="form-group formDiv">
+									   <label class="formLabel"><i class="fa fa-exclamation-triangle" aria-hidden="true" title="上传所有文件大小最大为30M"></i>附件上传:</label>
+									   <span id="fileOriginal" name="fileOriginal" class="formSpan" style="width:237px;"></span>
+									   <form id="fileForm" action="/oa/workflow/uploadFile" method="post">
+									   		<input id="fileName" name="fileName" type="text" hidden='true'>
+									   </form>
+										<div class="form-group" style="float: right;margin-top: 5px;">
+							        	 	<button type="button" class="btn btn-primary btn-sm" style="margin-right:10px;" onclick="uploadFile();">上传附件</button>
+											<!-- <button type="button" class="btn btn-default btn-sm" style="margin-right:10px;" onclick="delFile();">删除附件</button> -->
+						            		<button type="button" class="btn btn-primary btn-sm" onclick="addFile('fileForm');">添加附件</button>
+						            	</div>
+									</div>
+									<div class="form-group formDiv" style="float: left;width: 100%;">
+										<label class="formLabel">下一步骤:</label>
+										<span id="nextApproval" name="nextApproval" class="formSpan transform"></span>
+									</div>
+									<div class="form-group formDiv" style="float: left;width: 100%;">
+										<label class="labelForInput">审批人员:</label>
+										<select id="ApprovalStaff" name="ApprovalStaff" class="form-control formSpan need transform"></select>
+									</div>
+							　</div>
+							<div class="twoRowDiv" style="margin-top:25px;">
+									<table class="table" style="text-overflow:ellipsis;white-space: nowrap;">
+									  <tbody>
+											<tr>
+												<td style="height: 40px;width: 80px;">流程节点</td>
+												<td style="width: 80px;">经办人</td>
+												<td style="width: 120px;">接收时间</td>
+												<td style="width: 120px;">审批时间</td>
+												<td style="width: 40px;">状态</td>
+												<td>意见</td>
+											</tr>
+										</tbody>
+										<tbody id="taskTbodyShow"></tbody>
+									</table>
+							　</div>
+                  </div>
+              </div>
+	   </div>
+		<div class="modal-footer">
+			　<button type="button" class="btn btn-default btn-sm" style="float:right;margin-left:5px;" data-dismiss="modal">返回</button>
+		    <button type="button" class="btn btn-primary btn-sm lookHidden" style="float:right;" onclick="reSaveDiv(15)">重新申请</button>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,133 @@
+<div class="modal-dialog" style="width:950px;">
+	<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal"
+				aria-hidden="true">&times;</button>
+			<h4 class="modal-title">流程信息</h4>
+		</div>
+		<div class="modal-body" style="padding:10">
+              <div id="saveDiv"　class="panel panel-primary">
+                     <div class="panel-heading"  style="text-align:center;font-size:18px;">天孚公司外出活动审批表</div>
+                     <div class="panel-body">
+                        <div class="oneRowDiv" style="height:150px;">
+                        		<div class="form-group formDiv">
+									<label class="formLabel">表单编号:</label>
+									<span id="formId" name="formId" class="formSpan transform"></span>
+								</div>
+								<div class="form-group formDiv">
+									<label class="formLabel">申请单位(部门):</label>
+									<span id="deptName" name="deptName" class="formSpan transform"></span>
+								</div>
+								<div class="form-group formDiv">
+									<label class="formLabel">活动主题:</label>
+									<input id="activityName" name="activityName" class="formSpan transform need" style="width:60%"/>
+								</div>
+								<div class="form-group formDiv">
+									<label class="formLabel">活动主办单位:</label>
+									<input id="activityCompany" name="activityCompany" class="formSpan transform need" style="width:60%"/>
+								</div>
+						 </div>
+						 <div class="oneRowDiv" style="height:110px;">
+								<div class="form-group formDiv">
+									<label class="formLabel">申请日期:</label>
+									<span id="applyDate" name="applyDate" class="formSpan transform">2016-07-06</span>
+								</div>
+								<div class="form-group formDiv">
+									<label class="formLabel">申请人:</label>
+									<span id="applyStaff" name="applyStaff" class="formSpan transform"></span>
+								</div>
+						 </div>
+                         <div class="twoRowDiv" style="height:190px;">
+                         		<div class="form-group formDiv" style="float:left;width:49%">
+									<label class="formLabel">外出目的地:</label>
+									<input id="address" name="address" class="formSpan transform need" style="width:60%"/>
+								</div>
+								<div class="form-group formDiv" style="float:left;width:49%">
+									<label class="formLabel">活动人数:</label>
+									<input id="personCount" name="personCount" class="formSpan transform need" style="width:60%"/>
+								</div>
+								<div class="form-group formDiv" style="float:left;width:49%;">
+									<label class="formLabel">交通安排:</label>
+									<input id="car" name="car" class="formSpan transform need" style="width:60%"/>
+								</div>
+								<div class="form-group formDiv" style="float:left;width:49%;">
+									<label class="formLabel" style="width: 85px;">起止时间:</label>
+									<input id="beginDate" name="beginDate" type="text" class="form-control transform need" style="float:left;width:142px;height:26px;"  onfocus="WdatePicker({skin:'whyGreen',isShowClear:true,readOnly:true,dateFmt:'yyyy-MM-dd HH:mm'})" >
+									<label class="formLabel" style="width: 14px;">至</label>
+									<input id="endDate" name="endDate" type="text" class="form-control transform need" style="float:left;width:142px;height:26px;"  onfocus="WdatePicker({skin:'whyGreen',isShowClear:true,readOnly:true,dateFmt:'yyyy-MM-dd HH:mm'})" >
+								</div>
+								<div class="form-group formDiv" style="float:left;width:49%;">
+									<label class="formLabel">带队负责人:</label>
+									<input id=captain name="captain" class="formSpan transform need" style="width:60%"/>
+								</div>
+								<div class="form-group formDiv" style="float:left;width:49%;">
+									<label class="formLabel">联系电话:</label>
+									<input id="phone" name="phone" class="formSpan transform need" style="width:60%"/>
+								</div>
+								<div class="form-group formDiv" style="float:left">
+									<label class="formLabel">外出行程:</label>
+									<input id="trip" name="trip" class="formSpan transform need" style="width:85%"/>
+								</div>
+								<div class="form-group formDiv" style="float:left;width:49%;">
+									<label class="formLabel">活动经费:</label>
+									<input id="giveMoney" name="giveMoney" class="formSpan transform need" style="width:60%"/>
+								</div>
+								<div class="form-group formDiv" style="float:left;width:49%;">
+									<label class="formLabel">活动总费用:</label>
+									<input id="useMoney" name="useMoney" class="formSpan transform need" style="width:44%"/>
+									<label class="formLabel" style="width:115px;">元(测算依据附件)</label>
+								</div>
+								
+						　</div>
+						 <div class="twoRowDiv" style="height:40px;">
+								<div class="form-group formDiv">
+									<label class="labelForInput">外出事由:</label>
+									<textarea id="reason" name ="reason" style="width:670px;max-width:670px;max-height:50px;" class="form-control　formSpan transform need"></textarea>
+								</div>
+						　</div>
+						　<div class="twoRowDiv" style="height:auto;margin-top:30px;">
+									<div class="form-group formDiv">
+									   <label class="formLabel"><i class="fa fa-exclamation-triangle" aria-hidden="true" title="上传所有文件大小最大为30M"></i>附件上传:</label>
+									   <span id="fileOriginal" name="fileOriginal" class="formSpan" style="width:237px;"></span>
+									   <form id="fileForm" action="/oa/workflow/uploadFile" method="post">
+									   		<input id="fileName" name="fileName" type="text" hidden='true'>
+									   </form>
+										<div class="form-group" style="float: right;margin-top: 5px;">
+							        	 	<button type="button" class="btn btn-primary btn-sm" style="margin-right:10px;" onclick="uploadFile();">上传附件</button>
+											<!-- <button type="button" class="btn btn-default btn-sm" style="margin-right:10px;" onclick="delFile();">删除附件</button> -->
+						            		<button type="button" class="btn btn-primary btn-sm" onclick="addFile('fileForm');">添加附件</button>
+						            	</div>
+									</div>
+									<div class="form-group formDiv" style="float: left;width: 100%;">
+										<label class="formLabel">下一步骤:</label>
+										<span id="nextApproval" name="nextApproval" class="formSpan transform"></span>
+									</div>
+									<div class="form-group formDiv" style="float: left;width: 100%;">
+										<label class="labelForInput">审批人员:</label>
+										<select id="ApprovalStaff" name="ApprovalStaff" class="form-control formSpan need transform"></select>
+									</div>
+							　</div>
+						<div class="twoRowDiv" style="margin-top:25px;">
+								<table class="table" style="text-overflow:ellipsis;white-space: nowrap;">
+								  <tbody>
+										<tr>
+											<td style="height: 40px;width: 80px;">流程节点</td>
+											<td style="width: 80px;">经办人</td>
+											<td style="width: 120px;">接收时间</td>
+											<td style="width: 120px;">审批时间</td>
+											<td style="width: 40px;">状态</td>
+											<td>意见</td>
+										</tr>
+									</tbody>
+									<tbody id="taskTbodyShow"></tbody>
+								</table>
+						　	</div>
+                  </div>
+              </div>
+	   </div>
+		<div class="modal-footer">
+			　<button type="button" class="btn btn-default btn-sm" style="float:right;margin-left:5px;" data-dismiss="modal">返回</button>
+		    <button type="button" class="btn btn-primary btn-sm lookHidden" style="float:right;" onclick="reSaveDiv(9)">重新申请</button>
+		</div>
+	</div>
+</div>

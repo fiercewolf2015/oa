@@ -1,0 +1,27 @@
+body,button, input, select, textarea,p,div,span,h1,h2,h3,h4,h5,h6,a,li,ul{
+font-family:"Microsoft YaHei",Arial,Helvetica,sans-serif,"宋体";
+}
+.btn-primary{
+	background-color:#00A0EA;
+	border-color:#00A0EA;
+}
+.panel-primary > .panel-heading{
+	background-color:#00A0EA;
+	border-color:#00A0EA;
+}
+.panel-primary{
+	border-color:#00A0EA;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary, .btn-primary:active:focus, .btn-primary:active:hover, .btn-primary.active:hover, .btn-primary.active:focus{
+	background-color:#00A0EA;
+	border-color:#00A0EA;
+	color:#ffffff
+}
+.btn-primary.disabled, .btn-primary.disabled:hover, .btn-primary.disabled:focus, .btn-primary.disabled:active, .btn-primary.disabled.active, .btn-primary[disabled], .btn-primary[disabled]:hover, .btn-primary[disabled]:focus, .btn-primary[disabled]:active, .btn-primary.active[disabled], fieldset[disabled] .btn-primary, fieldset[disabled] .btn-primary:hover, fieldset[disabled] .btn-primary:focus, fieldset[disabled] .btn-primary:active, fieldset[disabled] .btn-primary.active{
+	background-color:#00A0EA;
+	border-color:#00A0EA;
+}
+.form-control:focus, .single-line:focus{
+	border-color:#00A0EA !important;
+}
+img.transparent{filter:alpha(opacity=40);moz-opacity:.40;opacity:.40;position:absolute;top: 12%;left: 80%;}
