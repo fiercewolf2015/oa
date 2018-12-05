@@ -5,19 +5,19 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.shiro.authc.AuthenticationException;
+import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
 import org.apache.shiro.web.filter.authc.FormAuthenticationFilter;
+import org.apache.shiro.web.util.WebUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
 
 import com.xyj.oa.log.aop.SpringContextUtil;
 import com.xyj.oa.log.entity.BizActionLog;
 import com.xyj.oa.log.event.BizActionLogAddEventPublisher;
 import com.xyj.oa.log.service.BizActionLogService;
 
-//@Component
 public class LoginRecordFilter extends FormAuthenticationFilter {
 
 	private static final Logger LOG = LoggerFactory.getLogger(LoginRecordFilter.class);
@@ -51,6 +51,13 @@ public class LoginRecordFilter extends FormAuthenticationFilter {
 			LOG.info(token.getUsername() + "  登录失败--" + e);
 			return onLoginFailure(token, e, request, response);
 		}
+	}
+	
+	@Override
+	protected boolean onLoginSuccess(AuthenticationToken token, Subject subject, ServletRequest request,ServletResponse response) throws Exception {
+		WebUtils.getAndClearSavedRequest(request);
+		WebUtils.redirectToSavedRequest(request, response, "/staff");
+		return false;
 	}
 
 	private void saveLoginRecord(ServletRequest request) {

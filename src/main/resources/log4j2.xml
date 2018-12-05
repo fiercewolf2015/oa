@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration strict="true" monitorInterval="300">
+    <Properties>
+        <Property name="logPath">D:\logs\oa\</Property>
+        <Property name="fileName">oa.log</Property>
+        <Property name="debugFileName">oa-dbg.log</Property>
+    </Properties>
+
+    <Appenders>
+        <Console name="STDOUT">
+            <PatternLayout pattern="%d %-5level [%thread] %logger{1}: %msg%n" charset="UTF-8"/>
+        </Console>
+
+        <RollingFile name="SERVER" fileName="${logPath}${fileName}" filePattern="${logPath}${fileName}.%d{yyyy-MM-dd}.gz">
+            <ThresholdFilter level="WARN" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout charset="UTF-8">
+                <Pattern>%d %-5level [%thread] %logger{1}: %msg%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+            </Policies>
+            <DefaultRolloverStrategy max="30"/>
+        </RollingFile>
+
+        <RollingFile name="SERVER-DEBUG" fileName="${logPath}${debugFileName}" filePattern="${logPath}${debugFileName}.%d{yyyy-MM-dd}.gz">
+            <PatternLayout charset="UTF-8">
+                <Pattern>%d %-5level [%thread] %logger{1}: %msg%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+            </Policies>
+            <DefaultRolloverStrategy max="3"/>
+        </RollingFile>
+    </Appenders>
+
+    <Loggers>
+        <logger name="org.hibernate" level="WARN" />
+        <logger name="org.springframework" level="WARN" />
+        <logger name="com.xyj.oa.config" level="TRACE" />
+
+        <Root level="DEBUG">                 
+            <AppenderRef ref="SERVER"/>
+            <AppenderRef ref="SERVER-DEBUG"/>
+            <AppenderRef ref="STDOUT"/>
+        </Root>
+    </Loggers>
+
+</Configuration>
