@@ -9,7 +9,7 @@ import javax.persistence.Query;
 import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.xyj.oa.auth.OaShiroRealm.ShiroUser;
+import com.xyj.oa.auth.ShiroRealm.ShiroUser;
 import com.xyj.oa.auth.ShiroManager;
 import com.xyj.oa.finance.entity.FinanceApproval;
 import com.xyj.oa.user.entity.User;

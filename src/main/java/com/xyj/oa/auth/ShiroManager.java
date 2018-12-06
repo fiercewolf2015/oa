@@ -3,7 +3,7 @@ package com.xyj.oa.auth;
 import org.apache.shiro.SecurityUtils;
 import org.springframework.stereotype.Component;
 
-import com.xyj.oa.auth.OaShiroRealm.ShiroUser;
+import com.xyj.oa.auth.ShiroRealm.ShiroUser;
 import com.xyj.oa.role.entity.Role;
 import com.xyj.oa.user.entity.User;
 

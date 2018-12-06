@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.xyj.oa.auth.OaShiroRealm.ShiroUser;
+import com.xyj.oa.auth.ShiroRealm.ShiroUser;
 import com.xyj.oa.auth.ShiroManager;
 import com.xyj.oa.meeting.service.MeetingService;
 import com.xyj.oa.user.entity.User;

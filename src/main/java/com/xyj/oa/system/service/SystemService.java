@@ -17,7 +17,7 @@ import com.xyj.oa.api.vo.APIErrorCode;
 import com.xyj.oa.api.vo.ApiResult;
 import com.xyj.oa.api.vo.NoticeVo;
 import com.xyj.oa.api.vo.NoticeVoResult;
-import com.xyj.oa.auth.OaShiroRealm.ShiroUser;
+import com.xyj.oa.auth.ShiroRealm.ShiroUser;
 import com.xyj.oa.auth.ShiroManager;
 import com.xyj.oa.department.entity.Department;
 import com.xyj.oa.department.repository.DepartMentDao;

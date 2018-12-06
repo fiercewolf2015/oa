@@ -1,8 +1,3 @@
-/*******************************************************************************
- * Copyright (c) 2005, 2014 springside.github.io
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- *******************************************************************************/
 package com.xyj.oa.auth;
 
 import java.io.Serializable;
@@ -28,7 +23,7 @@ import com.xyj.oa.role.entity.Role;
 import com.xyj.oa.user.entity.User;
 import com.xyj.oa.user.service.AccountService;
 
-public class OaShiroRealm extends AuthorizingRealm {
+public class ShiroRealm extends AuthorizingRealm {
 
 	@Autowired
 	protected AccountService accountService;

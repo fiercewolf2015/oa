@@ -1,22 +1,8 @@
-/*
-Navicat MySQL Data Transfer
-
-Source Server         : 天孚（新）
-Source Server Version : 50722
-Source Host           : localhost:3306
-Source Database       : tf
-
-Target Server Type    : MYSQL
-File Encoding         : 65001
-
-Date: 2018-11-29 14:19:18
-*/
-
 SET FOREIGN_KEY_CHECKS=0;
 
--- ----------------------------
--- Table structure for t_assettype
--- ----------------------------
+-- --------------------------------
+-- Table structure for t_assettypes
+-- --------------------------------
 DROP TABLE IF EXISTS `t_assettypes`;
 CREATE TABLE `t_assettypes` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
@@ -27,9 +13,9 @@ CREATE TABLE `t_assettypes` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Table structure for t_bizaction_log
--- ----------------------------
+-- -------------------------------------
+-- Table structure for t_bizaction_logs
+-- -------------------------------------
 DROP TABLE IF EXISTS `t_bizaction_logs`;
 CREATE TABLE `t_bizaction_logs` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
@@ -43,9 +29,9 @@ CREATE TABLE `t_bizaction_logs` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=81318 DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Table structure for t_budget_commissioner
--- ----------------------------
+-- ------------------------------------------
+-- Table structure for t_budget_commissioners
+-- ------------------------------------------
 DROP TABLE IF EXISTS `t_budget_commissioners`;
 CREATE TABLE `t_budget_commissioners` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
@@ -56,9 +42,9 @@ CREATE TABLE `t_budget_commissioners` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Table structure for t_budgetmodel
--- ----------------------------
+-- -----------------------------------
+-- Table structure for t_budgetmodels
+-- -----------------------------------
 DROP TABLE IF EXISTS `t_budgetmodels`;
 CREATE TABLE `t_budgetmodels` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
@@ -67,9 +53,9 @@ CREATE TABLE `t_budgetmodels` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Table structure for t_budgetmodel_subject
--- ----------------------------
+-- -------------------------------------------
+-- Table structure for t_budgetmodel_subjects
+-- -------------------------------------------
 DROP TABLE IF EXISTS `t_budgetmodel_subjects`;
 CREATE TABLE `t_budgetmodel_subjects` (
   `model_id` bigint(20) NOT NULL,
@@ -77,9 +63,9 @@ CREATE TABLE `t_budgetmodel_subjects` (
   PRIMARY KEY (`model_id`,`sub_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Table structure for t_businessdata
--- ----------------------------
+-- ------------------------------------
+-- Table structure for t_businessdatas
+-- ------------------------------------
 DROP TABLE IF EXISTS `t_businessdatas`;
 CREATE TABLE `t_businessdatas` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
@@ -90,9 +76,9 @@ CREATE TABLE `t_businessdatas` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=18515 DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Table structure for t_contract_will_form
--- ----------------------------
+-- -------------------------------------------
+-- Table structure for t_contract_will_forms
+-- -------------------------------------------
 DROP TABLE IF EXISTS `t_contract_will_forms`;
 CREATE TABLE `t_contract_will_forms` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
@@ -132,9 +118,9 @@ CREATE TABLE `t_contract_will_forms` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1535 DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Table structure for t_department
--- ----------------------------
+-- ----------------------------------
+-- Table structure for t_departments
+-- ----------------------------------
 DROP TABLE IF EXISTS `t_departments`;
 CREATE TABLE `t_departments` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
@@ -148,25 +134,9 @@ CREATE TABLE `t_departments` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=462 DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Table structure for t_department_copy
--- ----------------------------
-DROP TABLE IF EXISTS `t_department_copys`;
-CREATE TABLE `t_department_copys` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `department_name` varchar(255) DEFAULT NULL,
-  `department_no` varchar(255) DEFAULT NULL,
-  `department_describe` varchar(255) DEFAULT NULL,
-  `department_level` int(20) DEFAULT NULL,
-  `remarks` varchar(255) DEFAULT NULL,
-  `parent_id` bigint(20) DEFAULT NULL,
-  `old_id` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=305 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Table structure for t_finance_actually_subject
--- ----------------------------
+-- ------------------------------------------------
+-- Table structure for t_finance_actually_subjects
+-- ------------------------------------------------
 DROP TABLE IF EXISTS `t_finance_actually_subjects`;
 CREATE TABLE `t_finance_actually_subjects` (
   `fa_id` bigint(20) NOT NULL,
@@ -174,9 +144,9 @@ CREATE TABLE `t_finance_actually_subjects` (
   PRIMARY KEY (`fa_id`,`fac_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Table structure for t_finance_organization_approval
--- ----------------------------
+-- -----------------------------------------------------
+-- Table structure for t_finance_organization_approvals
+-- -----------------------------------------------------
 DROP TABLE IF EXISTS `t_finance_organization_approvals`;
 CREATE TABLE `t_finance_organization_approvals` (
   `fapp_id` bigint(20) NOT NULL,
@@ -184,9 +154,9 @@ CREATE TABLE `t_finance_organization_approvals` (
   PRIMARY KEY (`fapp_id`,`for_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Table structure for t_financeactually
--- ----------------------------
+-- ---------------------------------------
+-- Table structure for t_financeactuallys
+-- ---------------------------------------
 DROP TABLE IF EXISTS `t_financeactuallys`;
 CREATE TABLE `t_financeactuallys` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
@@ -197,9 +167,9 @@ CREATE TABLE `t_financeactuallys` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Table structure for t_financeactuallysubject
--- ----------------------------
+-- ----------------------------------------------
+-- Table structure for t_financeactuallysubjects
+-- ----------------------------------------------
 DROP TABLE IF EXISTS `t_financeactuallysubjects`;
 CREATE TABLE `t_financeactuallysubjects` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
@@ -208,9 +178,9 @@ CREATE TABLE `t_financeactuallysubjects` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Table structure for t_financeapproval
--- ----------------------------
+-- ---------------------------------------
+-- Table structure for t_financeapprovals
+-- ---------------------------------------
 DROP TABLE IF EXISTS `t_financeapprovals`;
 CREATE TABLE `t_financeapprovals` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
@@ -241,9 +211,9 @@ CREATE TABLE `t_financeapprovals` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Table structure for t_financeapproval_staff
--- ----------------------------
+-- ---------------------------------------------
+-- Table structure for t_financeapproval_staffs
+-- ---------------------------------------------
 DROP TABLE IF EXISTS `t_financeapproval_staffs`;
 CREATE TABLE `t_financeapproval_staffs` (
   `fapp_id` bigint(20) NOT NULL,
@@ -251,9 +221,9 @@ CREATE TABLE `t_financeapproval_staffs` (
   PRIMARY KEY (`fapp_id`,`staff_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- ----------------------------
--- Table structure for t_financeline
--- ----------------------------
+-- ------------------------------------
+-- Table structure for t_financelines
+-- ------------------------------------
 DROP TABLE IF EXISTS `t_financelines`;
 CREATE TABLE `t_financelines` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
@@ -264,9 +234,9 @@ CREATE TABLE `t_financelines` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Table structure for t_financeorganization
--- ----------------------------
+-- -------------------------------------------
+-- Table structure for t_financeorganizations
+-- -------------------------------------------
 DROP TABLE IF EXISTS `t_financeorganizations`;
 CREATE TABLE `t_financeorganizations` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
@@ -290,9 +260,9 @@ CREATE TABLE `t_financeorganizations` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=194 DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Table structure for t_financesubject
--- ----------------------------
+-- --------------------------------------
+-- Table structure for t_financesubjects
+-- --------------------------------------
 DROP TABLE IF EXISTS `t_financesubjects`;
 CREATE TABLE `t_financesubjects` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
@@ -305,9 +275,9 @@ CREATE TABLE `t_financesubjects` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=109 DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Table structure for t_leavetype
--- ----------------------------
+-- ---------------------------------
+-- Table structure for t_leavetypes
+-- ---------------------------------
 DROP TABLE IF EXISTS `t_leavetypes`;
 CREATE TABLE `t_leavetypes` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
@@ -318,9 +288,9 @@ CREATE TABLE `t_leavetypes` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Table structure for t_meeting
--- ----------------------------
+-- --------------------------------
+-- Table structure for t_meetings
+-- --------------------------------
 DROP TABLE IF EXISTS `t_meetings`;
 CREATE TABLE `t_meetings` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
@@ -337,9 +307,9 @@ CREATE TABLE `t_meetings` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
--- ----------------------------
+-- ------------------------------------------
 -- Table structure for t_meeting_attachments
--- ----------------------------
+-- ------------------------------------------
 DROP TABLE IF EXISTS `t_meeting_attachments`;
 CREATE TABLE `t_meeting_attachments` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
@@ -351,9 +321,9 @@ CREATE TABLE `t_meeting_attachments` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
--- ----------------------------
+-- ------------------------------------------
 -- Table structure for t_meeting_plan_staffs
--- ----------------------------
+-- ------------------------------------------
 DROP TABLE IF EXISTS `t_meeting_plan_staffs`;
 CREATE TABLE `t_meeting_plan_staffs` (
   `m_id` bigint(20) NOT NULL,
@@ -361,9 +331,9 @@ CREATE TABLE `t_meeting_plan_staffs` (
   PRIMARY KEY (`m_id`,`s_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Table structure for t_meeting_staff
--- ----------------------------
+-- -------------------------------------
+-- Table structure for t_meeting_staffs
+-- -------------------------------------
 DROP TABLE IF EXISTS `t_meeting_staffs`;
 CREATE TABLE `t_meeting_staffs` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
@@ -373,9 +343,9 @@ CREATE TABLE `t_meeting_staffs` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Table structure for t_notice
--- ----------------------------
+-- ------------------------------
+-- Table structure for t_notices
+-- ------------------------------
 DROP TABLE IF EXISTS `t_notices`;
 CREATE TABLE `t_notices` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
@@ -388,9 +358,9 @@ CREATE TABLE `t_notices` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13343 DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Table structure for t_notice_staff
--- ----------------------------
+-- ------------------------------------
+-- Table structure for t_notice_staffs
+-- ------------------------------------
 DROP TABLE IF EXISTS `t_notice_staffs`;
 CREATE TABLE `t_notice_staffs` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
@@ -400,9 +370,9 @@ CREATE TABLE `t_notice_staffs` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=32104 DEFAULT CHARSET=latin1;
 
--- ----------------------------
--- Table structure for t_occupation
--- ----------------------------
+-- ---------------------------------
+-- Table structure for t_occupations
+-- ---------------------------------
 DROP TABLE IF EXISTS `t_occupations`;
 CREATE TABLE `t_occupations` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
@@ -414,9 +384,9 @@ CREATE TABLE `t_occupations` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Table structure for t_overtimetype
--- ----------------------------
+-- -----------------------------------
+-- Table structure for t_overtimetypes
+-- -----------------------------------
 DROP TABLE IF EXISTS `t_overtimetypes`;
 CREATE TABLE `t_overtimetypes` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
@@ -427,9 +397,9 @@ CREATE TABLE `t_overtimetypes` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
--- ----------------------------
+-- -----------------------------
 -- Table structure for t_actions
--- ----------------------------
+-- -----------------------------
 DROP TABLE IF EXISTS `t_actions`;
 CREATE TABLE `t_actions` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
@@ -439,7 +409,7 @@ CREATE TABLE `t_actions` (
 ) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for t_post
+-- Table structure for t_posts
 -- ----------------------------
 DROP TABLE IF EXISTS `t_posts`;
 CREATE TABLE `t_posts` (
@@ -452,23 +422,9 @@ CREATE TABLE `t_posts` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2558 DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Table structure for t_post_copy
--- ----------------------------
-DROP TABLE IF EXISTS `t_post_copys`;
-CREATE TABLE `t_post_copys` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `post_name` varchar(255) DEFAULT NULL,
-  `post_no` varchar(255) DEFAULT NULL,
-  `post_describe` varchar(255) DEFAULT NULL,
-  `remarks` varchar(255) DEFAULT NULL,
-  `old_id` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2459 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Table structure for t_post_department
--- ----------------------------
+-- --------------------------------------
+-- Table structure for t_post_departments
+-- --------------------------------------
 DROP TABLE IF EXISTS `t_post_departments`;
 CREATE TABLE `t_post_departments` (
   `post_id` bigint(20) NOT NULL,
@@ -487,9 +443,9 @@ CREATE TABLE `t_roles` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
--- ----------------------------
+-- ----------------------------------
 -- Table structure for t_role_actions
--- ----------------------------
+-- ----------------------------------
 DROP TABLE IF EXISTS `t_role_actions`;
 CREATE TABLE `t_role_actions` (
   `role_id` bigint(20) NOT NULL,
@@ -497,9 +453,9 @@ CREATE TABLE `t_role_actions` (
   PRIMARY KEY (`role_id`,`action_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Table structure for t_sealtype
--- ----------------------------
+-- -------------------------------
+-- Table structure for t_sealtypes
+-- -------------------------------
 DROP TABLE IF EXISTS `t_sealtypes`;
 CREATE TABLE `t_sealtypes` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
@@ -511,7 +467,7 @@ CREATE TABLE `t_sealtypes` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for t_staff
+-- Table structure for t_staffs
 -- ----------------------------
 DROP TABLE IF EXISTS `t_staffs`;
 CREATE TABLE `t_staffs` (
@@ -555,54 +511,9 @@ CREATE TABLE `t_staffs` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1579 DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Table structure for t_staff_copy
--- ----------------------------
-DROP TABLE IF EXISTS `t_staff_copys`;
-CREATE TABLE `t_staff_copys` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `staff_no` varchar(50) DEFAULT NULL,
-  `staff_name` varchar(255) DEFAULT NULL,
-  `personal_id` varchar(255) DEFAULT NULL,
-  `gender` tinyint(4) DEFAULT NULL,
-  `nation` varchar(255) DEFAULT NULL,
-  `birthday` varchar(50) DEFAULT NULL,
-  `native_place` varchar(255) DEFAULT NULL,
-  `marriage` tinyint(4) DEFAULT NULL,
-  `political` varchar(20) DEFAULT NULL,
-  `blood` varchar(50) DEFAULT NULL,
-  `health` varchar(255) DEFAULT NULL,
-  `party_date` varchar(50) DEFAULT NULL,
-  `education` varchar(255) DEFAULT NULL,
-  `major` varchar(255) DEFAULT NULL,
-  `highest_degree` varchar(255) DEFAULT NULL,
-  `highest_degree_major` varchar(255) DEFAULT NULL,
-  `degree` varchar(255) DEFAULT NULL,
-  `forensic_time` varchar(50) DEFAULT NULL,
-  `certificate_number` varchar(255) DEFAULT NULL,
-  `other_certificate` varchar(255) DEFAULT NULL,
-  `other_forensic_time` varchar(50) DEFAULT NULL,
-  `other_certificate_number` varchar(255) DEFAULT NULL,
-  `job_time` varchar(50) DEFAULT NULL,
-  `enterprise_time` varchar(50) DEFAULT NULL,
-  `home_address` varchar(255) DEFAULT NULL,
-  `home_phone_num` varchar(50) DEFAULT NULL,
-  `account_address` varchar(255) DEFAULT NULL,
-  `archives_address` varchar(255) DEFAULT NULL,
-  `mobile_phone` varchar(255) DEFAULT NULL,
-  `fixed_phone` varchar(255) DEFAULT NULL,
-  `email` varchar(255) DEFAULT NULL,
-  `job_project` varchar(255) DEFAULT NULL,
-  `occupation_id` bigint(20) DEFAULT NULL,
-  `title_id` bigint(20) DEFAULT NULL,
-  `department_id` bigint(20) DEFAULT NULL,
-  `old_id` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1498 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Table structure for t_staff_post
--- ----------------------------
+-- ---------------------------------
+-- Table structure for t_staff_posts
+-- ---------------------------------
 DROP TABLE IF EXISTS `t_staff_posts`;
 CREATE TABLE `t_staff_posts` (
   `staff_id` bigint(20) NOT NULL,
@@ -610,9 +521,9 @@ CREATE TABLE `t_staff_posts` (
   PRIMARY KEY (`staff_id`,`post_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Table structure for t_subject_post
--- ----------------------------
+-- -----------------------------------
+-- Table structure for t_subject_posts
+-- -----------------------------------
 DROP TABLE IF EXISTS `t_subject_posts`;
 CREATE TABLE `t_subject_posts` (
   `su_id` bigint(20) NOT NULL,
@@ -633,7 +544,7 @@ CREATE TABLE `t_titles` (
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for t_user
+-- Table structure for t_users
 -- ----------------------------
 DROP TABLE IF EXISTS `t_users`;
 CREATE TABLE `t_users` (
@@ -650,9 +561,9 @@ CREATE TABLE `t_users` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=925 DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Table structure for t_workflow
--- ----------------------------
+-- -------------------------------
+-- Table structure for t_workflows
+-- -------------------------------
 DROP TABLE IF EXISTS `t_workflows`;
 CREATE TABLE `t_workflows` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
@@ -671,9 +582,9 @@ CREATE TABLE `t_workflows` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=368 DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Table structure for t_workflow_post
--- ----------------------------
+-- ------------------------------------
+-- Table structure for t_workflow_posts
+-- ------------------------------------
 DROP TABLE IF EXISTS `t_workflow_posts`;
 CREATE TABLE `t_workflow_posts` (
   `wf_id` bigint(20) NOT NULL,
@@ -691,9 +602,9 @@ CREATE TABLE `t_workflow_staffs` (
   PRIMARY KEY (`wf_id`,`s_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Table structure for t_workflowinstance
--- ----------------------------
+-- ---------------------------------------
+-- Table structure for t_workflowinstances
+-- ---------------------------------------
 DROP TABLE IF EXISTS `t_workflowinstances`;
 CREATE TABLE `t_workflowinstances` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
@@ -740,9 +651,9 @@ CREATE TABLE `t_workflowinstances` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=18149 DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Table structure for t_workflowpointinfo
--- ----------------------------
+-- ----------------------------------------
+-- Table structure for t_workflowpointinfos
+-- ----------------------------------------
 DROP TABLE IF EXISTS `t_workflowpointinfos`;
 CREATE TABLE `t_workflowpointinfos` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
@@ -757,9 +668,9 @@ CREATE TABLE `t_workflowpointinfos` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=126189 DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Table structure for t_workflowrule
--- ----------------------------
+-- -----------------------------------
+-- Table structure for t_workflowrules
+-- -----------------------------------
 DROP TABLE IF EXISTS `t_workflowrules`;
 CREATE TABLE `t_workflowrules` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
@@ -776,9 +687,9 @@ CREATE TABLE `t_workflowrules` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=15688 DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Table structure for t_workflowtype
--- ----------------------------
+-- -----------------------------------
+-- Table structure for t_workflowtypes
+-- -----------------------------------
 DROP TABLE IF EXISTS `t_workflowtypes`;
 CREATE TABLE `t_workflowtypes` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,

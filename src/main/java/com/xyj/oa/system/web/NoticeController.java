@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.xyj.oa.auth.OaShiroRealm.ShiroUser;
+import com.xyj.oa.auth.ShiroRealm.ShiroUser;
 import com.xyj.oa.auth.ShiroManager;
 import com.xyj.oa.staff.entity.Staff;
 import com.xyj.oa.system.service.SystemService;

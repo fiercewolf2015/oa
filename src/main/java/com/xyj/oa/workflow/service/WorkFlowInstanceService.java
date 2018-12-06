@@ -18,7 +18,7 @@ import com.xyj.oa.api.exception.ApiException;
 import com.xyj.oa.api.vo.APIErrorCode;
 import com.xyj.oa.api.vo.JsonMapper;
 import com.xyj.oa.api.vo.WorkFlowInstanceVo;
-import com.xyj.oa.auth.OaShiroRealm.ShiroUser;
+import com.xyj.oa.auth.ShiroRealm.ShiroUser;
 import com.xyj.oa.auth.ShiroManager;
 import com.xyj.oa.post.entity.Post;
 import com.xyj.oa.staff.entity.Staff;
